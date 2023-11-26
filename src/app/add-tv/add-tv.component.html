@@ -1,0 +1,40 @@
+<body>
+    <div class="login-body">
+        <form action="#">
+            <div class="title">
+                <h1>add</h1>
+            </div>
+            <div class="form-item">
+                <label for="username">username</label>
+                <input type="text" [(ngModel)]="addform.username" name="username">
+            </div>
+            <div class="form-item">
+                <label for="name">filename</label>
+                <input type="text" [(ngModel)]="addform.name" name="name">
+            </div>
+            <div class="form-item">
+                <label for="detail">detail</label>
+                <input type="text" [(ngModel)]="addform.detail" name="detail">
+            </div>
+            <div class="card">
+
+                <p-fileUpload name="myfile[]" [customUpload]="true" (uploadHandler)="myUploader($event)">
+                    <ng-template pTemplate="toolbar">
+                        <div>Upload</div>
+                    </ng-template>
+                    <ng-template pTemplate="content">
+
+                    </ng-template>
+
+                </p-fileUpload>
+
+
+            </div>
+            <div class="form-item">
+                <button type="submit" id="submit" class="btn btn-primary" (click)="add()">
+            add
+          </button>
+            </div>
+        </form>
+    </div>
+</body>

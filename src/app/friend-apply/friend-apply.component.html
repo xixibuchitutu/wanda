@@ -1,0 +1,27 @@
+<app-navigate></app-navigate>
+
+<x-input [(ngModel)]="data"></x-input>
+<x-button type="danger" round size="big" (click)="addApply()">add friends</x-button>
+
+
+<div style="clear: both;"></div>
+<p-table [value]="apply_list">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>sendName</th>
+            <th>accpetName</th>
+            <th>proceed</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item>
+        <tr>
+            <td>{{item.sendName}}</td>
+            <td>{{item.acceptName}}</td>
+            <td>
+                <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined" (click)="deleteApply(item._id)"></button>
+                <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded p-button-danger p-button-outlined" (click)="AccpetApply(item._id,item.sendName,item.acceptName)"></button>
+
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

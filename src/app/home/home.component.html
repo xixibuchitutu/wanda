@@ -1,0 +1,33 @@
+<x-container>
+    <x-header>
+
+        <app-navigate></app-navigate>
+    </x-header>
+
+    <body>
+        <x-main>
+            <div #scroll class="row scroll">
+                <x-anchor [scroll]="scroll">
+
+                    <div class="p-5 flex flex-column flex-auto">
+                        <div class="grid" *ngFor="let item of tv1_list">
+                            <div class="col-12 lg:col-12">
+                                <div class="surface-card border-round shadow-2 p-4 text-center">
+                                    <video style="display: block; margin: auto;" width="320" height="240" controls>
+                                        <source src="https://wandayongblob.blob.core.windows.net/wandayong/IMG_0255.MP4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="text-900 font-medium mb-3 text-xl" style="text-align: center; color: aliceblue; font-size: 20px;">video:{{item.fileName}}</div>
+                                    <x-button icon="fto-search" circle (click)="detail(item.id)" style="display: flex;"></x-button>
+                                    <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined" (click)="delete()"></button> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                    </div>
+                </x-anchor>
+            </div>
+
+        </x-main>
+    </body>
+</x-container>

@@ -1,0 +1,15 @@
+.item {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.row-divider {
+    clear: both;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+body {
+    background: url('https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg') no-repeat;
+    background-size: 100% 130%;
+}

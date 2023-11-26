@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<app-navigate></app-navigate>
+
+<body>
+    <div id="all">
+        <div style="clear: both;"></div>
+        <div id="content">
+            <div class="a1">
+                <video class="big" controls>
+                    <source src="https://wandayongblob.blob.core.windows.net/wandayong/IMG_0255.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                <div class="a11">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="a2">
+                <h2>video:{{tv_detail.fileName}}</h2>
+                <div class="a21">
+                    <div class="a211">
+                        <span class="color">username:</span>
+                        <span class="neir">{{tv_detail.username}}</span>
+                    </div>
+                    <div class="a25">
+                        <!--                        <a href="#"><button class="a25color1" (click)="AddReview(tv_detail._id)">add review</button></a>
+-->
+                        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined" (click)="deleteTv()"></button>
+                        <button (click)="dialog()" class="a25color1">add review</button> </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+        <p-table [value]="review_list">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>userName</th>
+                    <th>message</th>
+                    <th>rate</th>
+                    <th>proceed</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-item>
+                <tr>
+                    <td>{{item.username}}</td>
+                    <td>{{item.comment}}</td>
+                    <td>
+                        <x-rate class="'custom-rate'" half [(ngModel)]="item.star" [customTemp]="chineseTpl"></x-rate>
+                    </td>
+
+                    <td>
+                        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined" (click)="deleteReview(item)"></button>
+                        <br>
+                        <button pButton pRipple type="button" class="p-button-rounded p-button-danger p-button-outlined" (click)="translate(item.comment)" class="a25color1">translate</button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+</body>
+
+</html>
+<x-dialog title="add review" [(visible)]="visible" [placement]="placement" (close)="evt('close')" (cancel)="evt('cancel')" [cancelText]="concelText" [confirmText]="confirmText" (confirm)="evt('confirm')" [width]="width" draggable resizable="true">
+    <div>
+        <p>
+            <input type="text" [(ngModel)]="data" placeholder="please input review" style="height:200px;width:700x;">
+        </p>
+        <br>
+        <br>
+        <span style="font-size:50px;">rate:</span>
+        <x-rate class="'custom-rate'" half [(ngModel)]="model" [customTemp]="chineseTpl"></x-rate>
+        <br>
+        <ng-template #chineseTpl>☆</ng-template>
+        <br>
+    </div>
+</x-dialog>

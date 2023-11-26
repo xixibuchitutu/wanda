@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="register_box">
+        <h2>Register</h2>
+        <div id="input_box">
+            <input type="text" [(ngModel)]="userform.email" placeholder="please input Email">
+        </div>
+        <div class="input_box">
+            <input type="password" [(ngModel)]="userform.password" placeholder="please input Password">
+        </div>
+        <button value="Register" (click)="register()">register</button>
+        <button value="login" [routerLink]="['/login']">login</button>
+    </div>
+</body>
+
+</html>

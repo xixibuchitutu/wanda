@@ -1,0 +1,50 @@
+<body>
+    <div class="login-body">
+        <form action="#">
+            <div class="title">
+                <h1>add</h1>
+            </div>
+            <div class="form-item">
+                <label for="Operating_system">Operating_system</label>
+                <input type="text" [(ngModel)]="updateTv2.Operating_system" name="Operating_system">
+            </div>
+            <div class="form-item">
+                <label for="Picture_qualtiy">Picture_qualtiy</label>
+                <input type="text" [(ngModel)]="updateTv2.Picture_qualtiy" name="Picture_qualtiy">
+            </div>
+            <div class="form-item">
+                <label for="Product_Name">Product_Name</label>
+                <input type="text" [(ngModel)]="updateTv2.Product_Name" name="Product_Name">
+            </div>
+            <div class="form-item">
+                <label for="current_price">current_price</label>
+                <input type="text" [(ngModel)]="updateTv2.current_price" name="current_price">
+            </div>
+            <div class="form-item">
+                <label for="Speaker">Speaker</label>
+                <input type="text" [(ngModel)]="updateTv2.Speaker" name="Speaker">
+            </div>
+            <div class="form-item">
+                <label for="Ratings">Ratings</label>
+                <input type="text" [(ngModel)]="updateTv2.Ratings" name="Speaker">
+            </div>
+            <div class="form-item">
+                <label for="Frequency">Frequency</label>
+                <input type="text" [(ngModel)]="updateTv2.Frequency" name="Frequency">
+            </div>
+            <div class="form-item">
+                <label for="Image_url">Image_url</label>
+                <input type="text" [(ngModel)]="updateTv2.Image_url" name="Image_url">
+            </div>
+            <div class="form-item">
+                <label for="channel">channel</label>
+                <input type="text" [(ngModel)]="updateTv2.channel" name="channel">
+            </div>
+            <div class="form-item">
+                <button type="submit" id="submit" class="btn btn-primary" (click)="updateTvs()">
+            updateTv
+          </button>
+            </div>
+        </form>
+    </div>
+</body>
